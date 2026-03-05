@@ -13,4 +13,8 @@ jobs:
       - name: Push to Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://CuteNiru:$HF_TOKEN@huggingface.co/spaces/CuteStarOC01/openclaw-delta-ai main
+        run: |
+          git config --global user.email "cutestar.panda@gmail.com"
+          git config --global user.name "CuteNiru"
+          # This command forces a clean push of only current files
+          git push --force https://CuteNiru:$HF_TOKEN@huggingface.co/spaces/CuteStarOC01/openclaw-delta-ai main
